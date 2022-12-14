@@ -1,0 +1,132 @@
+/* super reset CSS */
+html{
+    font-size: 62.5%; /* base 16 pixel x 62.5 = 10 000 rem */
+}
+
+body{
+    font: 1.6rem sans-serif;
+    margin: 0;
+    letter-spacing: 1.6;
+    background-color: #000000;
+
+}
+
+h1,h2,h3,h4,h5,
+p,ul,ol,figure{
+    margin: 0;
+    padding: 0;
+    list-style: none; /* pour enlever les puces de la liste à puce */
+}
+
+*{
+    /*sélecteur universel pour dire à l'HTML*/
+    box-sizing: border-box; 
+}
+/* lien vers une autre page html*/
+a{
+    text-decoration:  none; /* = pour enlever le surlignage sur le lien */
+    color: rgb(142, 12, 12);
+}
+button{
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    font-size: inherit; 
+}
+/*theme*/
+:root{
+    --default-color:#ffffff;
+    --raisin-black: #2b2a33ff;
+    --light-slate-gray: #7b8999ff;
+    --indigo-dye: #204762ff;
+    --gunmetal: #283543ff;
+    --oxford-blue: #1f2839ff;
+
+}
+
+header{
+    background-color: var(--light-slate-gray);
+    line-height: 8rem;
+}
+header h1{
+    text-align: center;
+    font-weight: 400;
+    font-size: 4rem;
+    color: var(--default-color);
+    text-shadow: .1rem .1rem 0 var(--gunmetal), 
+    .1rem -.1rem 0 var(--gunmetal),
+    -.1rem .1rem 0 var(--gunmetal),
+    -.1rem -.1rem 0 var(--gunmetal);
+}
+.large-table-primary {
+    max-width: 100rem;
+    margin: 5rem auto;
+    
+}
+main figure{
+    max-width: 40rem;
+    margin: 5rem auto 0;
+}
+
+main figure *{
+    font-weight: 40;
+    text-align: center;
+}
+
+.large-table-primary > table {
+    width: 100%;
+    background-color: var(--default-color);
+    color: var(--gunmetal);
+
+}
+
+.large-table-primary > table caption{
+    color: var(--default-color);
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    padding: .5rem;
+}
+
+.large-table-primary > table,
+thead th,
+tbody td,
+tfoot th{
+    border-collapse: collapse; /* pour enlever bordure épaisse du tableau*/
+    border: solid .1rem var(--raisin-black);
+    padding: .8rem;
+    line-height: 3.5rem; /* pour espacer les lignes du tableau*/
+}
+.large-table-primary > table thead th, 
+:is(tfoot th){
+    background-color: var(--indigo-dye);
+    font-weight: 300;
+    color: var(--default-color);
+    text-transform: uppercase; /* pour mettre le texte en majuscule*/
+}
+.large-table-primary > table thead th:nth-child(1)::before,
+:is(tfoot th:nth-child(1))::before{
+    content: "\1F3C6";
+    vertical-align: middle;
+}
+/*pour mettre icone dans colonne 1 */
+
+.large-table-primary > table thead th:nth-of-type(1), 
+:is(tfoot th:first-child){
+    text-align: left;
+}/* = pour mettre 1ère ligne et dernière vers la gauche */
+
+/* pour colorer une ligne sur 2 à partir de la 2e
+ colonne et mettre à gauche le texte des colonnes de gauche et centrer le titre de la colonne 1 */
+.large-table-primary > table tbody tr:nth-of-type(2n+1){
+    background-color: var(--light-slate-gray);
+    text-align:left;
+}
+
+footer{
+    text-align: center;
+}
+@media screen and (max-width: 120rem){
+    .large-table-primary{
+        width: auto;
+    }
+}
